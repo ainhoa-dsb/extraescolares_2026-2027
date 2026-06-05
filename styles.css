@@ -246,10 +246,47 @@ h3 {
 }
 
 .form-panel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  align-items: start;
   gap: 24px;
+}
+
+.form-panel__copy {
+  max-width: 680px;
+}
+
+.form-panel__actions {
+  display: grid;
+  gap: 14px;
+  padding-top: 42px;
+}
+
+.contact-box {
+  display: grid;
+  gap: 6px;
+  max-width: 360px;
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.contact-box__label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.contact-box a {
+  color: var(--accent-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
 }
 
 .faq {
@@ -276,8 +313,7 @@ details p {
 }
 
 @media (max-width: 760px) {
-  .topbar__inner,
-  .form-panel {
+  .topbar__inner {
     align-items: flex-start;
     flex-direction: column;
     padding: 12px 0;
@@ -291,6 +327,7 @@ details p {
   }
 
   .hero__grid,
+  .form-panel,
   .activity {
     grid-template-columns: 1fr;
   }
