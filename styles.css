@@ -97,6 +97,7 @@ a {
 h1,
 h2,
 h3,
+h4,
 p {
   overflow-wrap: anywhere;
 }
@@ -117,6 +118,11 @@ h2 {
 h3 {
   margin: 0 0 6px;
   font-size: 1.15rem;
+}
+
+h4 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
 }
 
 .lead {
@@ -199,6 +205,23 @@ h3 {
 .section__head p,
 .form-panel p {
   color: var(--muted);
+}
+
+.activity-groups {
+  display: grid;
+  gap: 34px;
+}
+
+.activity-group {
+  display: grid;
+  gap: 14px;
+}
+
+.activity-group > h3 {
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent-dark);
+  font-size: 1.35rem;
 }
 
 .activity-list {

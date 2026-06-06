@@ -3,111 +3,41 @@ const CONFIG = {
   descripcion:
     'Estamos preparando la oferta de extraescolares para el proximo curso. Esta preinscripcion nos ayudara a saber si hay alumnado suficiente para formar grupo. Rellenarla no garantiza plaza ni obliga al pago; sirve para organizar la oferta definitiva.',
   minimoGrupo: 8,
-  actividades: [
+  categorias: [
     {
-      nombre: 'Robotica educativa LEGO',
-      horario: 'Lunes y miercoles 17:00-18:00',
-      descripcion: 'Iniciacion a la construccion y programacion con LEGO mediante retos y juegos. Se trabaja logica, creatividad, resolucion de problemas y trabajo en equipo.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
+      nombre: 'Infantil',
+      actividades: [
+        actividad('Karate', 'Martes y jueves 17:00-18:00', 'Practica de karate adaptada a la edad para trabajar disciplina, equilibrio, coordinacion, respeto y control corporal.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Multideporte', 'Martes y jueves 17:00-18:00', 'Juegos deportivos variados para moverse, cooperar, mejorar habilidades motrices y descubrir diferentes disciplinas.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Funky', 'Martes y jueves 17:00-18:00', 'Baile con musica actual y coreografias adaptadas para trabajar ritmo, coordinacion, expresion corporal y confianza en grupo.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('DivertiLEGO', 'Lunes y miercoles 17:00-18:00', 'Construcciones, retos y juegos con piezas LEGO para estimular imaginacion, motricidad fina, logica y cooperacion.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Cocina', 'Viernes 17:00-18:30', 'Taller practico para aprender recetas sencillas, manipulacion segura de alimentos, autonomia, creatividad y trabajo en equipo.', '25 euros socios AMPA', '27 euros no socios AMPA'),
+        actividad('Inteligencia emocional', 'Viernes 17:00-18:30', 'Actividad para reconocer emociones, mejorar la autoestima, practicar habilidades sociales y aprender estrategias de calma y convivencia.', '20 euros socios AMPA', '22 euros no socios AMPA'),
+        actividad('Musica y movimiento', 'Martes y jueves 17:00-18:00', 'Actividad musical y corporal para explorar ritmo, canciones, movimiento, expresion y escucha activa de forma ludica.', '22 euros socios AMPA', '24 euros no socios AMPA')
+      ]
     },
     {
-      nombre: 'DivertiLEGO',
-      horario: 'Lunes y miercoles 17:00-18:00',
-      descripcion: 'Construcciones, retos y juegos con piezas LEGO para estimular imaginacion, motricidad fina, logica y cooperacion.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
+      nombre: 'Primaria',
+      actividades: [
+        actividad('Apoyo escolar', 'Lunes y miercoles 17:00-18:00', 'Acompanamiento para reforzar aprendizajes, organizar tareas y adquirir habitos de estudio con apoyo adaptado a las necesidades del alumnado.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Comic', 'Viernes 17:00-18:30', 'Creacion de personajes, vinietas e historias visuales. Se trabaja dibujo, narracion, planificacion de escenas y creatividad.', '20 euros socios AMPA', '22 euros no socios AMPA'),
+        actividad('Krav maga: defensa personal', 'Martes y jueves 17:00-18:00', 'Iniciacion a la defensa personal desde la seguridad, el autocontrol y el respeto. Se trabajan tecnica basica, coordinacion y confianza.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Karate', 'Martes y jueves 17:00-18:00', 'Practica de karate adaptada a la edad para trabajar disciplina, equilibrio, coordinacion, respeto y control corporal.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Multideporte', 'Martes y jueves 17:00-18:00', 'Juegos deportivos variados para moverse, cooperar, mejorar habilidades motrices y descubrir diferentes disciplinas.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Funky', 'Martes y jueves 17:00-18:00', 'Baile con musica actual y coreografias adaptadas para trabajar ritmo, coordinacion, expresion corporal y confianza en grupo.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Robotica educativa LEGO', 'Lunes y miercoles 17:00-18:00', 'Iniciacion a la construccion y programacion con LEGO mediante retos y juegos. Se trabaja logica, creatividad, resolucion de problemas y trabajo en equipo.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Cocina', 'Viernes 17:00-18:30', 'Taller practico para aprender recetas sencillas, manipulacion segura de alimentos, autonomia, creatividad y trabajo en equipo.', '25 euros socios AMPA', '27 euros no socios AMPA'),
+        actividad('Lenguaje de signos', 'Lunes y miercoles 17:00-18:00', 'Introduccion practica a la lengua de signos para aprender vocabulario, expresiones cotidianas y formas de comunicacion inclusiva.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Inteligencia emocional', 'Viernes 17:00-18:30', 'Actividad para reconocer emociones, mejorar la autoestima, practicar habilidades sociales y aprender estrategias de calma y convivencia.', '20 euros socios AMPA', '22 euros no socios AMPA'),
+        actividad('Pintura', 'Viernes 17:00-18:30', 'Exploracion de tecnicas pictoricas, color, composicion y creatividad mediante proyectos artisticos adaptados por edades.', '20 euros socios AMPA', '22 euros no socios AMPA'),
+        actividad('Teatro', 'Viernes 17:00-18:30', 'Juegos dramaticos, expresion corporal, voz e improvisacion para ganar confianza, creatividad y habilidades de comunicacion.', '20 euros socios AMPA', '22 euros no socios AMPA')
+      ]
     },
     {
-      nombre: 'Lenguaje de signos',
-      horario: 'Lunes y miercoles 17:00-18:00',
-      descripcion: 'Introduccion practica a la lengua de signos para aprender vocabulario, expresiones cotidianas y formas de comunicacion inclusiva.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Apoyo escolar',
-      horario: 'Lunes y miercoles 17:00-18:00',
-      descripcion: 'Acompanamiento para reforzar aprendizajes, organizar tareas y adquirir habitos de estudio con apoyo adaptado a las necesidades del alumnado.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Krav maga: defensa personal',
-      horario: 'Martes y jueves 17:00-18:00',
-      descripcion: 'Iniciacion a la defensa personal desde la seguridad, el autocontrol y el respeto. Se trabajan tecnica basica, coordinacion y confianza.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Karate',
-      horario: 'Martes y jueves 17:00-18:00',
-      descripcion: 'Practica de karate adaptada a la edad para trabajar disciplina, equilibrio, coordinacion, respeto y control corporal.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Multideporte',
-      horario: 'Martes y jueves 17:00-18:00',
-      descripcion: 'Juegos deportivos variados para moverse, cooperar, mejorar habilidades motrices y descubrir diferentes disciplinas.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Funky',
-      horario: 'Martes y jueves 17:00-18:00',
-      descripcion: 'Baile con musica actual y coreografias adaptadas para trabajar ritmo, coordinacion, expresion corporal y confianza en grupo.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Musica y movimiento',
-      horario: 'Martes y jueves 17:00-18:00',
-      descripcion: 'Actividad musical y corporal para explorar ritmo, canciones, movimiento, expresion y escucha activa de forma ludica.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Defensa personal femenina',
-      horario: 'Martes y jueves 17:00-18:00',
-      descripcion: 'Espacio para trabajar seguridad, prevencion, confianza y recursos basicos de defensa personal desde una perspectiva adaptada y respetuosa.',
-      precioSocios: '22 euros socios AMPA',
-      precioNoSocios: '24 euros no socios AMPA'
-    },
-    {
-      nombre: 'Cocina',
-      horario: 'Viernes 17:00-18:30',
-      descripcion: 'Taller practico para aprender recetas sencillas, manipulacion segura de alimentos, autonomia, creatividad y trabajo en equipo.',
-      precioSocios: '25 euros socios AMPA',
-      precioNoSocios: '27 euros no socios AMPA'
-    },
-    {
-      nombre: 'Pintura',
-      horario: 'Viernes 17:00-18:30',
-      descripcion: 'Exploracion de tecnicas pictoricas, color, composicion y creatividad mediante proyectos artisticos adaptados por edades.',
-      precioSocios: '20 euros socios AMPA',
-      precioNoSocios: '22 euros no socios AMPA'
-    },
-    {
-      nombre: 'Teatro',
-      horario: 'Viernes 17:00-18:30',
-      descripcion: 'Juegos dramaticos, expresion corporal, voz e improvisacion para ganar confianza, creatividad y habilidades de comunicacion.',
-      precioSocios: '20 euros socios AMPA',
-      precioNoSocios: '22 euros no socios AMPA'
-    },
-    {
-      nombre: 'Comic',
-      horario: 'Viernes 17:00-18:30',
-      descripcion: 'Creacion de personajes, vinietas e historias visuales. Se trabaja dibujo, narracion, planificacion de escenas y creatividad.',
-      precioSocios: '20 euros socios AMPA',
-      precioNoSocios: '22 euros no socios AMPA'
-    },
-    {
-      nombre: 'Inteligencia emocional',
-      horario: 'Viernes 17:00-18:30',
-      descripcion: 'Actividad para reconocer emociones, mejorar la autoestima, practicar habilidades sociales y aprender estrategias de calma y convivencia.',
-      precioSocios: '20 euros socios AMPA',
-      precioNoSocios: '22 euros no socios AMPA'
+      nombre: 'Adultos',
+      actividades: [
+        actividad('Defensa personal femenina', 'Martes y jueves 17:00-18:00', 'Espacio para trabajar seguridad, prevencion, confianza y recursos basicos de defensa personal desde una perspectiva adaptada y respetuosa.', '22 euros socios AMPA', '24 euros no socios AMPA')
+      ]
     }
   ]
 };
@@ -121,27 +51,26 @@ function crearFormularioExtraescolares() {
   );
 
   form.addTextItem()
-    .setTitle('Nombre y apellidos del alumno/a')
+    .setTitle('Nombre y apellidos del menor o persona participante')
     .setRequired(true);
 
   form.addTextItem()
-    .setTitle('Curso o edad')
+    .setTitle('Curso, edad o etapa')
     .setRequired(true);
 
   form.addTextItem()
-    .setTitle('Nombre de la persona responsable')
+    .setTitle('Telefono de contacto')
     .setRequired(true);
 
-  form.addTextItem()
-    .setTitle('Telefono o email de contacto')
-    .setRequired(true);
+  CONFIG.categorias.forEach((categoria) => {
+    form.addCheckboxItem()
+      .setTitle('Actividades de ' + categoria.nombre)
+      .setHelpText('Marca solo las actividades de esta etapa que te interesan.')
+      .setChoiceValues(categoria.actividades.map((item) => formatearActividad(item, categoria.nombre)))
+      .setRequired(false);
+  });
 
-  const opciones = CONFIG.actividades.map(formatearActividad);
-
-  form.addCheckboxItem()
-    .setTitle('Marca las actividades que te interesan')
-    .setChoiceValues(opciones)
-    .setRequired(true);
+  const opciones = obtenerActividades().map((item) => formatearActividad(item, item.categoria));
 
   form.addListItem()
     .setTitle('Actividad preferida')
@@ -151,10 +80,6 @@ function crearFormularioExtraescolares() {
   form.addListItem()
     .setTitle('Segunda opcion')
     .setChoiceValues(['No tengo segunda opcion'].concat(opciones))
-    .setRequired(false);
-
-  form.addParagraphTextItem()
-    .setTitle('Si el horario no encaja, puedes indicar otra disponibilidad')
     .setRequired(false);
 
   form.addParagraphTextItem()
@@ -170,7 +95,7 @@ function crearFormularioExtraescolares() {
 
   const sheet = SpreadsheetApp.create(CONFIG.titulo + ' - respuestas');
   form.setDestination(FormApp.DestinationType.SPREADSHEET, sheet.getId());
-  crearHojaRecuento(sheet, CONFIG.actividades);
+  crearHojaRecuento(sheet, obtenerActividades());
 
   Logger.log('Formulario para editar: ' + form.getEditUrl());
   Logger.log('Formulario para familias: ' + form.getPublishedUrl());
@@ -179,24 +104,35 @@ function crearFormularioExtraescolares() {
 
 function crearHojaRecuento(sheet, actividades) {
   const resumen = sheet.insertSheet('Recuento');
-  resumen.getRange('A1:G1').setValues([['Actividad', 'Horario', 'Precio socios', 'Precio no socios', 'Minimo', 'Interes', 'Estado']]);
+  resumen.getRange('A1:H1').setValues([['Etapa', 'Actividad', 'Horario', 'Precio socios', 'Precio no socios', 'Minimo', 'Interes', 'Estado']]);
 
-  actividades.forEach((actividad, index) => {
+  actividades.forEach((item, index) => {
     const row = index + 2;
-    resumen.getRange(row, 1, 1, 5).setValues([
-      [actividad.nombre, actividad.horario, actividad.precioSocios, actividad.precioNoSocios, CONFIG.minimoGrupo]
+    resumen.getRange(row, 1, 1, 6).setValues([
+      [item.categoria, item.nombre, item.horario, item.precioSocios, item.precioNoSocios, CONFIG.minimoGrupo]
     ]);
-    resumen.getRange(row, 6).setFormula(
-      '=IFERROR(COUNTIF(\'Form Responses 1\'!E:E,"*' + actividad.nombre + '*"),COUNTIF(\'Respuestas de formulario 1\'!E:E,"*' + actividad.nombre + '*"))'
-    );
     resumen.getRange(row, 7).setFormula(
-      '=IF(F' + row + '>=E' + row + ',"Abrir grupo","No abrir todavia")'
+      '=IFERROR(SUM(COUNTIF(\'Form Responses 1\'!E:G,"*' + item.nombre + ' (' + item.categoria + ')*")),SUM(COUNTIF(\'Respuestas de formulario 1\'!E:G,"*' + item.nombre + ' (' + item.categoria + ')*")))'
+    );
+    resumen.getRange(row, 8).setFormula(
+      '=IF(G' + row + '>=F' + row + ',"Abrir grupo","No abrir todavia")'
     );
   });
 
-  resumen.autoResizeColumns(1, 7);
+  resumen.autoResizeColumns(1, 8);
 }
 
-function formatearActividad(actividad) {
-  return actividad.nombre + ' | ' + actividad.horario + ' | ' + actividad.precioSocios + ' / ' + actividad.precioNoSocios + ' | ' + actividad.descripcion;
+function obtenerActividades() {
+  return CONFIG.categorias.reduce((todas, categoria) => {
+    const actividades = categoria.actividades.map((item) => Object.assign({ categoria: categoria.nombre }, item));
+    return todas.concat(actividades);
+  }, []);
+}
+
+function actividad(nombre, horario, descripcion, precioSocios, precioNoSocios) {
+  return { nombre: nombre, horario: horario, descripcion: descripcion, precioSocios: precioSocios, precioNoSocios: precioNoSocios };
+}
+
+function formatearActividad(actividad, categoria) {
+  return actividad.nombre + ' (' + categoria + ') | ' + actividad.horario + ' | ' + actividad.precioSocios + ' / ' + actividad.precioNoSocios + ' | ' + actividad.descripcion;
 }

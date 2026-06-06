@@ -15,7 +15,7 @@ Este proyecto deja preparada una solucion sin coste para recoger interes por act
 3. Pega el contenido de `crear-formulario.gs`.
 4. Ejecuta la funcion `crearFormularioExtraescolares`.
 5. Copia desde los logs el enlace "Formulario para familias".
-6. Sustituye en `index.html` el enlace `https://forms.gle/REEMPLAZAR-CON-TU-FORMULARIO` por el enlace real del formulario.
+6. Sustituye en `index.html` el enlace del boton por el enlace real del formulario si cambia.
 7. Publica esta carpeta gratis con GitHub Pages, Netlify o cualquier hosting estatico.
 8. Comparte el enlace y un QR con las familias.
 
@@ -37,36 +37,53 @@ Preguntas recomendadas:
 
 | Pregunta | Tipo | Obligatoria |
 | --- | --- | --- |
-| Nombre y apellidos del alumno/a | Respuesta corta | Si |
-| Curso o edad | Respuesta corta | Si |
-| Nombre de la persona responsable | Respuesta corta | Si |
-| Telefono o email de contacto | Respuesta corta | Si |
-| Marca las actividades que te interesan | Casillas | Si |
+| Nombre y apellidos del menor o persona participante | Respuesta corta | Si |
+| Curso, edad o etapa | Respuesta corta | Si |
+| Telefono de contacto | Respuesta corta | Si |
+| Actividades de Infantil | Casillas | No |
+| Actividades de Primaria | Casillas | No |
+| Actividades de Adultos | Casillas | No |
 | Actividad preferida | Desplegable | Si |
 | Segunda opcion | Desplegable | No |
-| Si el horario no encaja, puedes indicar otra disponibilidad | Parrafo | No |
 | Observaciones o necesidades a tener en cuenta | Parrafo | No |
 | Acepto que estos datos se usen solo para organizar la oferta de extraescolares | Casilla de verificacion | Si |
 
-## Oferta
+## Oferta por etapa
+
+### Infantil
+
+| Actividad | Horario | Socios AMPA | No socios AMPA |
+| --- | --- | ---: | ---: |
+| Karate | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+| Multideporte | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+| Funky | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+| DivertiLEGO | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
+| Cocina | Viernes 17:00-18:30 | 25 euros | 27 euros |
+| Inteligencia emocional | Viernes 17:00-18:30 | 20 euros | 22 euros |
+| Musica y movimiento | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+
+### Primaria
 
 | Actividad | Horario | Socios AMPA | No socios AMPA |
 | --- | --- | ---: | ---: |
 | Robotica educativa LEGO | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| DivertiLEGO | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
 | Lenguaje de signos | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
 | Apoyo escolar | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
 | Krav maga: defensa personal | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Karate | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Multideporte | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Funky | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Musica y movimiento | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Defensa personal femenina | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Cocina | Viernes 17:00-18:30 | 25 euros | 27 euros |
 | Pintura | Viernes 17:00-18:30 | 20 euros | 22 euros |
 | Teatro | Viernes 17:00-18:30 | 20 euros | 22 euros |
 | Comic | Viernes 17:00-18:30 | 20 euros | 22 euros |
 | Inteligencia emocional | Viernes 17:00-18:30 | 20 euros | 22 euros |
+
+### Adultos
+
+| Actividad | Horario | Socios AMPA | No socios AMPA |
+| --- | --- | ---: | ---: |
+| Defensa personal femenina | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 
 ## Recuento en Google Sheets
 
@@ -75,11 +92,7 @@ El script crea una pestana `Recuento` con estas columnas:
 | Actividad | Horario | Precio socios | Precio no socios | Minimo | Interes | Estado |
 | --- | --- | --- | --- | ---: | ---: | --- |
 
-Formula orientativa para contar una actividad si la columna `E` contiene las actividades marcadas:
-
-```text
-=COUNTIF(E:E,"*Robotica educativa LEGO*")
-```
+El interes se cuenta buscando cada actividad en las columnas de Infantil, Primaria y Adultos.
 
 Formula orientativa para estado, si `E2` es el minimo y `F2` el interes:
 
