@@ -221,7 +221,8 @@ h4 {
   padding-bottom: 8px;
   border-bottom: 2px solid var(--accent);
   color: var(--accent-dark);
-  font-size: 1.35rem;
+  font-size: 1.65rem;
+  line-height: 1.1;
 }
 
 .activity-list {

@@ -15,9 +15,30 @@ Este proyecto deja preparada una solucion sin coste para recoger interes por act
 3. Pega el contenido de `crear-formulario.gs`.
 4. Ejecuta la funcion `crearFormularioExtraescolares`.
 5. Copia desde los logs el enlace "Formulario para familias".
-6. Sustituye en `index.html` el enlace del boton por el enlace real del formulario si cambia.
-7. Publica esta carpeta gratis con GitHub Pages, Netlify o cualquier hosting estatico.
-8. Comparte el enlace y un QR con las familias.
+6. El script programa automaticamente el cierre del formulario para el 12 de junio de 2026 a las 23:59.
+7. Sustituye en `index.html` el enlace del boton por el enlace real del formulario si cambia.
+8. Publica esta carpeta gratis con GitHub Pages, Netlify o cualquier hosting estatico.
+9. Comparte el enlace y un QR con las familias.
+
+## Cierre automatico
+
+El cierre se configura en `crear-formulario.gs`:
+
+```text
+fecha: new Date(2026, 5, 12, 23, 59, 0)
+```
+
+En JavaScript los meses empiezan en `0`, por eso `5` significa junio.
+
+Cuando ejecutes `crearFormularioExtraescolares`, el script:
+
+- crea el formulario;
+- guarda internamente el identificador del formulario;
+- crea un disparador temporal;
+- cerrara el formulario el 12 de junio de 2026 a las 23:59;
+- mostrara el mensaje: "El plazo de preinscripcion ha finalizado. Gracias por participar."
+
+Puedes comprobar el disparador en Apps Script desde el icono de reloj o en `Activadores`.
 
 ## Formulario
 
@@ -66,18 +87,19 @@ Preguntas recomendadas:
 
 | Actividad | Horario | Socios AMPA | No socios AMPA |
 | --- | --- | ---: | ---: |
-| Robotica educativa LEGO | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Lenguaje de signos | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
 | Apoyo escolar | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
+| Comic | Viernes 17:00-18:30 | 20 euros | 22 euros |
 | Krav maga: defensa personal | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Karate | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Multideporte | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
 | Funky | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+| Robotica educativa LEGO | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
 | Cocina | Viernes 17:00-18:30 | 25 euros | 27 euros |
+| Lenguaje de signos | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
+| Musicarte | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+| Inteligencia emocional | Viernes 17:00-18:30 | 20 euros | 22 euros |
 | Pintura | Viernes 17:00-18:30 | 20 euros | 22 euros |
 | Teatro | Viernes 17:00-18:30 | 20 euros | 22 euros |
-| Comic | Viernes 17:00-18:30 | 20 euros | 22 euros |
-| Inteligencia emocional | Viernes 17:00-18:30 | 20 euros | 22 euros |
 
 ### Adultos
 

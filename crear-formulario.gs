@@ -3,6 +3,10 @@ const CONFIG = {
   descripcion:
     'Estamos preparando la oferta de extraescolares para el proximo curso. Esta preinscripcion nos ayudara a saber si hay alumnado suficiente para formar grupo. Rellenarla no garantiza plaza ni obliga al pago; sirve para organizar la oferta definitiva.',
   minimoGrupo: 8,
+  cierre: {
+    fecha: new Date(2026, 5, 12, 23, 59, 0),
+    mensaje: 'El plazo de preinscripcion ha finalizado. Gracias por participar.'
+  },
   categorias: [
     {
       nombre: 'Infantil',
@@ -28,6 +32,7 @@ const CONFIG = {
         actividad('Robotica educativa LEGO', 'Lunes y miercoles 17:00-18:00', 'Iniciacion a la construccion y programacion con LEGO mediante retos y juegos. Se trabaja logica, creatividad, resolucion de problemas y trabajo en equipo.', '22 euros socios AMPA', '24 euros no socios AMPA'),
         actividad('Cocina', 'Viernes 17:00-18:30', 'Taller practico para aprender recetas sencillas, manipulacion segura de alimentos, autonomia, creatividad y trabajo en equipo.', '25 euros socios AMPA', '27 euros no socios AMPA'),
         actividad('Lenguaje de signos', 'Lunes y miercoles 17:00-18:00', 'Introduccion practica a la lengua de signos para aprender vocabulario, expresiones cotidianas y formas de comunicacion inclusiva.', '22 euros socios AMPA', '24 euros no socios AMPA'),
+        actividad('Musicarte', 'Martes y jueves 17:00-18:00', 'Acercamiento a la musica a traves de la voz, el movimiento, la escucha y los instrumentos, trabajando ritmo, creatividad, expresion y educacion en valores.', '22 euros socios AMPA', '24 euros no socios AMPA'),
         actividad('Inteligencia emocional', 'Viernes 17:00-18:30', 'Actividad para reconocer emociones, mejorar la autoestima, practicar habilidades sociales y aprender estrategias de calma y convivencia.', '20 euros socios AMPA', '22 euros no socios AMPA'),
         actividad('Pintura', 'Viernes 17:00-18:30', 'Exploracion de tecnicas pictoricas, color, composicion y creatividad mediante proyectos artisticos adaptados por edades.', '20 euros socios AMPA', '22 euros no socios AMPA'),
         actividad('Teatro', 'Viernes 17:00-18:30', 'Juegos dramaticos, expresion corporal, voz e improvisacion para ganar confianza, creatividad y habilidades de comunicacion.', '20 euros socios AMPA', '22 euros no socios AMPA')
@@ -63,9 +68,13 @@ function crearFormularioExtraescolares() {
     .setRequired(true);
 
   CONFIG.categorias.forEach((categoria) => {
+    form.addSectionHeaderItem()
+      .setTitle(categoria.nombre.toUpperCase())
+      .setHelpText('Opciones de extraescolares para ' + categoria.nombre + '.');
+
     form.addCheckboxItem()
       .setTitle('Actividades de ' + categoria.nombre)
-      .setHelpText('Marca solo las actividades de esta etapa que te interesan.')
+      .setHelpText('Puedes marcar una o varias opciones de ' + categoria.nombre + '.')
       .setChoiceValues(categoria.actividades.map((item) => formatearActividad(item, categoria.nombre)))
       .setRequired(false);
   });
@@ -96,10 +105,42 @@ function crearFormularioExtraescolares() {
   const sheet = SpreadsheetApp.create(CONFIG.titulo + ' - respuestas');
   form.setDestination(FormApp.DestinationType.SPREADSHEET, sheet.getId());
   crearHojaRecuento(sheet, obtenerActividades());
+  guardarFormularioActivo(form);
+  programarCierreFormulario();
 
   Logger.log('Formulario para editar: ' + form.getEditUrl());
   Logger.log('Formulario para familias: ' + form.getPublishedUrl());
   Logger.log('Hoja de respuestas: ' + sheet.getUrl());
+  Logger.log('Cierre programado: ' + CONFIG.cierre.fecha);
+}
+
+function programarCierreFormulario() {
+  eliminarDisparadoresCierre();
+  ScriptApp.newTrigger('cerrarFormularioExtraescolares')
+    .timeBased()
+    .at(CONFIG.cierre.fecha)
+    .create();
+}
+
+function cerrarFormularioExtraescolares() {
+  const formId = PropertiesService.getScriptProperties().getProperty('FORMULARIO_EXTRAESCOLARES_ID');
+  if (!formId) {
+    throw new Error('No hay formulario guardado. Ejecuta crearFormularioExtraescolares o guarda un formulario con guardarFormularioActivo.');
+  }
+
+  const form = FormApp.openById(formId);
+  form.setCustomClosedFormMessage(CONFIG.cierre.mensaje);
+  form.setAcceptingResponses(false);
+}
+
+function guardarFormularioActivo(form) {
+  PropertiesService.getScriptProperties().setProperty('FORMULARIO_EXTRAESCOLARES_ID', form.getId());
+}
+
+function eliminarDisparadoresCierre() {
+  ScriptApp.getProjectTriggers()
+    .filter((trigger) => trigger.getHandlerFunction() === 'cerrarFormularioExtraescolares')
+    .forEach((trigger) => ScriptApp.deleteTrigger(trigger));
 }
 
 function crearHojaRecuento(sheet, actividades) {
