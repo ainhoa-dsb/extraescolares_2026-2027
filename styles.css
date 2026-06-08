@@ -207,6 +207,14 @@ h4 {
   color: var(--muted);
 }
 
+.price-note {
+  padding: 12px 14px;
+  background: var(--soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
 .activity-groups {
   display: grid;
   gap: 34px;

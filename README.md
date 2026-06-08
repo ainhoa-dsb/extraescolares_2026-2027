@@ -71,6 +71,8 @@ Preguntas recomendadas:
 
 ## Oferta por etapa
 
+Las cuotas mensuales indicadas incluyen el coste del servicio contratado, la gestion administrativa de la actividad y una aportacion destinada a mejoras y actividades promovidas por el AMPA.
+
 ### Infantil
 
 | Actividad | Horario | Socios AMPA | No socios AMPA |
