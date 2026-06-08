@@ -75,38 +75,38 @@ Preguntas recomendadas:
 
 | Actividad | Horario | Socios AMPA | No socios AMPA |
 | --- | --- | ---: | ---: |
-| Cocina | Viernes 17:00-18:30 | 25 euros | 27 euros |
-| DivertiLEGO | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Funky | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Inteligencia emocional | Viernes 17:00-18:30 | 20 euros | 22 euros |
-| Karate | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Multideporte | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Musica y movimiento | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
+| Cocina | Viernes 17:00-18:30 | 24 euros | 27 euros |
+| DivertiLEGO | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Funky | Lunes y miercoles 17:00-18:00 | 21 euros | 24 euros |
+| Inteligencia emocional | Viernes 17:00-18:30 | 21 euros | 24 euros |
+| Karate | Lunes y miercoles 17:00-18:00 | 21 euros | 24 euros |
+| Multideporte | Lunes y miercoles 17:00-18:00 | 21 euros | 24 euros |
+| Musica y movimiento | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
 
 ### Primaria
 
 | Actividad | Horario | Socios AMPA | No socios AMPA |
 | --- | --- | ---: | ---: |
-| Apoyo escolar | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Comic | Viernes 17:00-18:30 | 20 euros | 22 euros |
-| Cocina | Viernes 17:00-18:30 | 25 euros | 27 euros |
-| Funky | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Gimnasia ritmica | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Inteligencia emocional | Viernes 17:00-18:30 | 20 euros | 22 euros |
-| Karate | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Krav maga: defensa personal | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Lenguaje de signos | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Multideporte | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Musicarte | Martes y jueves 17:00-18:00 | 22 euros | 24 euros |
-| Pintura | Viernes 17:00-18:30 | 20 euros | 22 euros |
-| Robotica educativa LEGO | Lunes y miercoles 17:00-18:00 | 22 euros | 24 euros |
-| Teatro | Viernes 17:00-18:30 | 20 euros | 22 euros |
+| Apoyo escolar | Lunes y miercoles 17:00-18:00 | 21 euros | 24 euros |
+| Comic | Viernes 17:00-18:30 | 21 euros | 24 euros |
+| Cocina | Viernes 17:00-18:30 | 24 euros | 27 euros |
+| Funky | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Gimnasia ritmica | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Inteligencia emocional | Viernes 17:00-18:30 | 21 euros | 24 euros |
+| Karate | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Krav maga: defensa personal | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Lenguaje de signos | Lunes y miercoles 17:00-18:00 | 21 euros | 24 euros |
+| Multideporte | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Musicarte | Martes y jueves 17:00-18:00 | 21 euros | 24 euros |
+| Pintura | Viernes 17:00-18:30 | 21 euros | 24 euros |
+| Robotica educativa LEGO | Lunes y miercoles 17:00-18:00 | 21 euros | 24 euros |
+| Teatro | Viernes 17:00-18:30 | 21 euros | 24 euros |
 
 ### Adultos
 
 | Actividad | Horario | Socios AMPA | No socios AMPA |
 | --- | --- | ---: | ---: |
-| Defensa personal femenina | Martes y jueves 17:00-18:00 | 32 euros | 34 euros |
+| Defensa personal femenina | Martes y jueves 17:00-18:00 | 31 euros | 34 euros |
 
 ## Recuento en Google Sheets
 
