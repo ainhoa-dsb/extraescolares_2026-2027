@@ -69,10 +69,6 @@ function crearFormularioExtraescolares() {
     .setRequired(true);
 
   CONFIG.categorias.forEach((categoria) => {
-    form.addSectionHeaderItem()
-      .setTitle(categoria.nombre.toUpperCase())
-      .setHelpText('Opciones de extraescolares para ' + categoria.nombre + '.');
-
     form.addCheckboxItem()
       .setTitle('Actividades de ' + categoria.nombre)
       .setHelpText('Puedes marcar una o varias opciones de ' + categoria.nombre + '.')
